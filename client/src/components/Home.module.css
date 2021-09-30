@@ -1,0 +1,57 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #008080;
+}
+
+.icons {
+  margin: 5%;
+  height: 100%;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.windows {
+  width: 100%;
+  display: flex;
+  height: 6%;
+  background-color: #bbc3c4;
+  gap: 10px;
+}
+
+.icons img {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.windows button {
+  width: 40px;
+}
+
+.windows .init {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+}
+
+.windows label {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+}
