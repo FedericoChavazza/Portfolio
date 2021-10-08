@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "98.css": "^0.1.17",
     "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
     "react-modal": "^3.14.3",
     "react-router": "^5.2.1",

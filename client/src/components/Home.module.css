@@ -10,17 +10,42 @@
 .icons {
   margin: 5%;
   height: 100%;
-  gap: 50px;
+  gap: 30px;
   display: flex;
   flex-direction: column;
+  font-family: ms-sans-serif;
+  font-size: 13px;
+  font-weight: 200;
 }
 
 .icons a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 }
 
+.icons div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icons div div {
+  padding: 5px;
+}
+
+.icons .noSelected {
+  border: 1px transparent white;
+  background-color: transparent;
+  color: black;
+}
+
+.icons .selected {
+  border: 1px dotted white;
+  background-color: #0000a2;
+  color: white;
+}
 .windows {
   width: 100%;
   display: flex;
@@ -30,10 +55,11 @@
 }
 
 .icons img {
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
   display: flex;
   align-items: center;
+  margin: 5px;
 }
 
 .windows button {
