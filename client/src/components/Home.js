@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import Modal from "react-modal";
 import { FolderView } from "./FolderView";
-import "98.css";
 
 export default function Home() {
   const [folder, setFolder] = useState(false);
@@ -87,12 +86,16 @@ export default function Home() {
   return (
     <div className={styles.body}>
       <div className={styles.icons}>
-        <div onClick={() => timesClick("linkedin")}>
+        <div
+          style={
+            clicks.linkedin === 1
+              ? { backgroundColor: "rgba(96,165,250,1)", padding: "10px 10px" }
+              : { backgroundColor: "hidden", padding: "10px 10px" }
+          }
+          onClick={() => timesClick("linkedin")}
+        >
           <a id="linkedin">
             <img
-              style={
-                clicks.linkedin === 1 ? { opacity: "0.5" } : { opacity: "1" }
-              }
               src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
               alt="Linkedin"
             />
@@ -171,11 +174,12 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.windows}>
-        <button className={styles.init}>INICIO</button>
-        <button>
-          <img src="https://win98icons.alexmeub.com/icons/png/address_book_user.png" />
-        </button>
-        <label>HORA</label>
+        <div className={styles.inicio}>
+          <img src="https://i.imgur.com/7aAYVFQ.png" alt="INICIO" />
+        </div>
+        <div className={styles.toolbar}>
+          <label>HORA</label>
+        </div>
       </div>
       {folder ? (
         <FolderView selected={selected} folder={folder} setFolder={setFolder} />

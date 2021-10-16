@@ -1,0 +1,138 @@
+.contenedor {
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+  height: 100vh;
+  color: white;
+  font-size: 18px;
+}
+
+.contenido {
+  --tw-gradient-to: #3b82f6;
+  --tw-gradient-from: #93c5fd;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(147, 197, 253, 0));
+
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.franja {
+  display: flex;
+  background-color: rgba(29, 78, 216, 1);
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 40px;
+  gap: 10px;
+}
+
+.franja img {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.infoContenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.izquierdaContenido {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid white;
+  align-items: flex-end;
+  padding-right: 30px;
+}
+
+.derechaContenido {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8%;
+  font-size: 22px;
+  padding: 10px;
+  border-radius: 4px;
+  width: auto;
+}
+
+.izquierdaContenido img {
+  width: 250px;
+  height: 200px;
+
+  margin-bottom: 20px;
+}
+
+.derechaContenido img {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 4px;
+  border: 2px solid white;
+}
+
+.botonEncendido {
+  padding: 4.5px;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 2px solid white;
+}
+
+.apagar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.apagar:hover {
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: rgba(59, 130, 246, 0.5);
+}
+
+.entrarUsuario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-left: 22px;
+  padding: 5px 15px 5px 5px;
+  border-radius: 4px;
+  border-top: 2px solid rgba(18, 67, 202, 0);
+  cursor: pointer;
+}
+
+.entrarUsuario:hover {
+  background-color: rgba(29, 79, 216, 0.829);
+  border-top: 2px solid rgba(18, 67, 202, 1);
+}
+
+.windows {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.usuario {
+  display: flex;
+  flex-direction: column;
+}

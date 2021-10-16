@@ -1,83 +1,40 @@
 .body {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  overscroll-behavior-y: contain;
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: #008080;
+  background-image: url("https://fondosmil.com/fondo/9728.jpg");
+  background-size: cover;
 }
 
 .icons {
-  margin: 5%;
-  height: 100%;
-  gap: 30px;
   display: flex;
   flex-direction: column;
-  font-family: ms-sans-serif;
-  font-size: 13px;
-  font-weight: 200;
-}
-
-.icons a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-}
-
-.icons div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icons div div {
-  padding: 5px;
-}
-
-.icons .noSelected {
-  border: 1px transparent white;
-  background-color: transparent;
-  color: black;
-}
-
-.icons .selected {
-  border: 1px dotted white;
-  background-color: #0000a2;
-  color: white;
-}
-.windows {
-  width: 100%;
-  display: flex;
-  height: 6%;
-  background-color: #bbc3c4;
-  gap: 10px;
+  justify-content: center;
+  gap: 40px;
+  align-content: flex-start;
 }
 
 .icons img {
-  height: 36px;
-  width: 36px;
-  display: flex;
-  align-items: center;
-  margin: 5px;
+  width: 60px;
+  height: 60px;
 }
 
-.windows button {
-  width: 40px;
-}
-
-.windows .init {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 40px;
-  width: 100px;
-  text-align: center;
-}
-
-.windows label {
+.windows {
+  --tw-gradient-to: #3b82f6;
+  --tw-gradient-from: #2563eb;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(37, 99, 235, 0));
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   width: 100%;
+  height: auto;
   display: flex;
-  justify-content: flex-end;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 2px solid rgba(59, 130, 246, 1);
 }
