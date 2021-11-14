@@ -56,7 +56,7 @@ export const FolderView = ({
   return (
     <Draggable
       bounds=".bounces"
-      handle="#windowHead"
+      handle={`${isIpad ? null : "#windowHead"}`}
       position={position}
       onStop={(_, d) => {
         setPosition({ x: d.lastX, y: d.lastY });
@@ -114,6 +114,7 @@ export const FolderView = ({
                 backgroundColor: "rgba(59,130,246,1)",
                 borderRadius: "0.25rem",
                 border: "1px solid white",
+                opacity: `${isIpad ? "0.5" : "1"}`,
               }}
             >
               {isMaximized ? (

@@ -381,10 +381,10 @@ export default function Home() {
             <div className={styles.footer}>
               <button
                 style={{ cursor: "pointer" }}
-                className={`${isMotoG4 && styles.hidden} ${styles.homeButton}`}
+                className={styles.homeButton}
               >
                 <img
-                  onClick={() => setOpenMenu(!openMenu)}
+                  onClick={() => (isMotoG4 ? null : setOpenMenu(!openMenu))}
                   id="openmenu-img"
                   src={
                     openMenu
