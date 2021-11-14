@@ -56,7 +56,7 @@ export const FolderView = ({
   return (
     <Draggable
       bounds=".bounces"
-      handle=".FolderView_windowHead__32l4-"
+      handle="#windowHead"
       position={position}
       onStop={(_, d) => {
         setPosition({ x: d.lastX, y: d.lastY });
@@ -70,7 +70,7 @@ export const FolderView = ({
         onClick={handleClick}
         unselectable={false}
       >
-        <div className={styles.windowHead}>
+        <div id="windowHead" className={styles.windowHead}>
           <div>
             <img style={{ margin: "5px", marginRight: "10px" }} src={img} />
             {windowTitle}
