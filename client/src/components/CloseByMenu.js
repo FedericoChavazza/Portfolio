@@ -2,7 +2,7 @@ import Modal from "react-modal";
 import styles from "./CloseByMenu.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { grayscale } from "../actions/actions";
+import { grayscale, windowActionClose } from "../actions/actions";
 import { ShuttingDown } from "./ShuttingDown";
 import { Redirect, useHistory } from "react-router";
 import { turnedOffScreen } from "../actions/actions";
@@ -46,9 +46,20 @@ export function CloseByMenu({ setTurnOffOption }) {
   function turnOffComputer() {
     dispatch(turnedOffScreen(true));
     dispatch(grayscale(false));
+    dispatch(windowActionClose("shutting down..."));
     setTimeout(() => {
       dispatch(turnedOffScreen(false));
       history.push("/turnedOff");
+    }, 3000);
+  }
+
+  function resetComputer() {
+    dispatch(turnedOffScreen(true));
+    dispatch(grayscale(false));
+    dispatch(windowActionClose("restarting..."));
+    setTimeout(() => {
+      dispatch(turnedOffScreen(false));
+      history.push("/");
     }, 3000);
   }
 
@@ -92,7 +103,7 @@ export function CloseByMenu({ setTurnOffOption }) {
               Turn Off
             </div>
             <div>
-              <div className={styles.columns}>
+              <div onClick={() => resetComputer()} className={styles.columns}>
                 <button
                   style={{ cursor: "pointer" }}
                   className={styles.restartButton}

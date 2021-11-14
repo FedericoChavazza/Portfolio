@@ -48,3 +48,10 @@ export function turnedOffScreen(boolean) {
     type: "TURNED_OFF_COMPUTER",
   };
 }
+
+export function windowActionClose(string) {
+  return {
+    payload: string,
+    type: "WINDOW_ACTION_CLOSE",
+  };
+}

@@ -1,11 +1,17 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router";
 import styles from "./TurnOff.module.css";
 
+import turnOn from "../Images/turnon.png";
+import turnOff from "../Images/turnoff.png";
+
 export function TurnOffComputer() {
   const history = useHistory();
+  const [isOff, setIsOff] = useState(true);
 
   function TurnOnComputer() {
+    setIsOff(false);
+
     setTimeout(() => {
       history.push("/");
     }, 6000);
@@ -13,7 +19,9 @@ export function TurnOffComputer() {
 
   return (
     <div className={styles.container}>
-      <button onClick={() => TurnOnComputer()}>PRENDETE ASJAJS</button>
+      <div className={styles.buttons}>
+        <img src={isOff ? turnOn : turnOff} onClick={() => TurnOnComputer()} />
+      </div>
     </div>
   );
 }

@@ -17,6 +17,7 @@ import { ShuttingDown } from "./ShuttingDown";
 import { useHour } from "../hook/useHour";
 
 export default function Home() {
+  const dataChange = useSelector((state) => state.windowsAction);
   const data = useSelector((state) => state.data);
   const grayscale = useSelector((state) => state.grayscale);
   const closedState = useSelector((state) => state.turnedOffComputer);
@@ -440,7 +441,7 @@ export default function Home() {
       ) : null} */}
         </div>
       ) : (
-        <ShuttingDown />
+        <ShuttingDown info={dataChange} />
       )}
     </div>
   );

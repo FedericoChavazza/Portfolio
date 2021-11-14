@@ -2,6 +2,7 @@ const initialState = {
   data: [],
   grayscale: false,
   turnedOffComputer: false,
+  windowsAction: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -78,6 +79,13 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         turnedOffComputer: action.payload,
+      };
+    }
+
+    case "WINDOW_ACTION_CLOSE": {
+      return {
+        ...state,
+        windowsAction: action.payload,
       };
     }
     default:
