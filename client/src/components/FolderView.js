@@ -22,7 +22,7 @@ export const FolderView = ({
 }) => {
   const dispatch = useDispatch();
   const [position, setPosition] = useState(false);
-  const isIpad = window.matchMedia("(max-width: 768px)").matches;
+  const isIpad = window.matchMedia("(max-width: 900px)").matches;
 
   const [isMaximized, setIsMaximized] = useState(isIpad);
 
