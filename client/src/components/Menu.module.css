@@ -1,0 +1,132 @@
+.showMenu {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 600px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 5px 0 0;
+  background-color: white;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.top {
+  height: 66px;
+  background-color: rgba(59, 130, 246, 1);
+  border-top: 3px solid rgba(96, 165, 250, 1);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 18px;
+  text-shadow: 0 0 3px black;
+}
+
+.top img {
+  height: 47px;
+  width: 47px;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+  image-rendering: pixelated;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  background-color: rgba(219, 234, 254, 1);
+  border-right: 2px solid rgba(59, 130, 246, 1);
+}
+
+.content div:nth-child(1) {
+  padding: 10px;
+  width: 50%;
+  background: white;
+}
+
+.content div:nth-child(2) {
+  width: 50%;
+  background-color: rgb(219, 234, 254);
+  border-left: rgba(191, 219, 254, 1);
+  border-left-width: 2px;
+  border-left-style: solid;
+}
+
+.footer {
+  height: 58px;
+  background-color: rgba(59, 130, 246, 1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  padding-right: 8px;
+  border-bottom: 2px solid rgba(37, 99, 235, 1);
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+  color: white;
+  border-radius: 0.25rem;
+  border-top: 2px solid transparent;
+}
+
+.buttonContainer:hover {
+  background: rgba(37, 99, 235, 1);
+  border-top: 2px solid rgba(29, 78, 216, 1);
+  cursor: pointer;
+}
+
+.footer div button {
+  all: unset;
+  height: 20px;
+  width: 20px;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border: 1px solid white;
+}
+
+.buttonContainer button:nth-child(1) {
+  background: rgba(245, 158, 11, 1);
+}
+
+.buttonContainer:nth-child(2) button {
+  background: rgba(239, 68, 68, 1);
+}
+
+.footer button svg {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.notShowMenu {
+  display: none;
+}
+
+.Icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+}
+
+.Icon:hover {
+  background: rgba(37, 99, 235, 1);
+  color: white;
+  cursor: pointer;
+}
+
+.Icon img {
+  width: 40px;
+}

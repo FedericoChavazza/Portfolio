@@ -1,0 +1,157 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 316px;
+  height: 236px;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 3s;
+}
+
+.dialog-enter {
+  left: -100%;
+  transition: left 300ms linear;
+}
+.dialog-enter-active {
+  left: 0;
+}
+.dialog-exit {
+  left: 0;
+  transition: left 300ms linear;
+}
+.dialog-exit-active {
+  left: -100%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.franja1 {
+  width: 316px;
+  height: 40px;
+  background-color: rgba(29, 78, 216, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.franja1 img {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.521));
+}
+
+.franja1 div {
+  font-family: "Franklin Gothic Medium", "Franklin Gothic",
+    "ITC Franklin Gothic", Arial, sans-serif;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 0 3px black;
+  letter-spacing: 1px;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.content {
+  width: 316px;
+  height: 144px;
+  background-color: rgba(59, 130, 246, 1);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.franja2 {
+  width: 316px;
+  height: 40px;
+  background-color: rgba(29, 78, 216, 1);
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.franja2 button {
+  cursor: pointer;
+  width: 74px;
+  height: 24px;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  letter-spacing: -1px;
+  background-color: white;
+  margin: 8px;
+}
+
+.deleteButton {
+  height: 34px;
+  width: 34px;
+  background-color: rgba(239, 68, 68, 1);
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+  gap: 50px;
+  padding: 7px;
+  border-radius: 0.25rem;
+  border-top: 2px solid transparent;
+  cursor: pointer;
+}
+
+.columns:hover {
+  background-color: rgba(37, 99, 235, 1);
+  border-top: 2px solid rgba(29, 78, 216, 1);
+  cursor: pointer;
+}
+
+.restartButton {
+  height: 34px;
+  width: 34px;
+  background-color: rgba(16, 185, 129, 1);
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 7px;
+  border-radius: 0.25rem;
+  border-top: 2px solid transparent;
+  cursor: pointer;
+}

@@ -6,3 +6,25 @@ a {
   text-decoration: none;
   color: white;
 }
+
+.bounces {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  z-index: -1;
+}
+
+.ReactModal__Content {
+  animation: fadeIn 0.85s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}

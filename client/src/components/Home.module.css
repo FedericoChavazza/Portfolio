@@ -7,34 +7,158 @@
   height: 100vh;
   align-items: flex-start;
   justify-content: space-between;
-  background-image: url("https://fondosmil.com/fondo/9728.jpg");
+  background-image: url("https://i.imgur.com/da4HY4P.jpg");
   background-size: cover;
+  overflow: hidden;
 }
 
 .icons {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 40px;
-  align-content: flex-start;
+  justify-content: flex-start;
+  margin: 6px;
+  gap: 2px;
 }
 
 .icons img {
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 5px;
+  user-select: none;
 }
 
-.windows {
+.footerContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer {
   --tw-gradient-to: #3b82f6;
   --tw-gradient-from: #2563eb;
   --tw-gradient-stops: var(--tw-gradient-from),
     var(--tw-gradient-to, rgba(37, 99, 235, 0));
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
+  /*
+    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+    border-top: 2px solid rgba(59, 130, 246, 1);
+  */
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.homeButton {
+  all: unset;
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.homeButton:hover img {
+  filter: brightness(115%);
+}
+
+.statusBar {
+  flex-grow: 1;
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   border-top: 2px solid rgba(59, 130, 246, 1);
+  display: flex;
+  flex-direction: row;
+}
+
+.statusBar > div {
+  display: flex;
+  cursor: pointer;
+}
+
+.statusBar > div:first-child {
+  margin-left: 10px;
+}
+
+.statusBar > div:not(first-child) {
+  margin-right: 3px;
+}
+
+.statusBar div img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(96, 165, 250, 1);
+  border-top: 2px solid #8cbdfb;
+  color: white;
+}
+
+.toolbar img {
+  height: 16px;
+  width: 16px;
+}
+
+.singleIconClick {
+  all: unset;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.singleIconClick:active,
+.singleIconClick:focus-within {
+  background-color: rgba(96, 165, 250, 0.5);
+  border: 1px solid rgba(96, 165, 250, 1);
+}
+
+.icons a div {
+  font-size: 16px;
+  text-shadow: 0 0 3px black;
+  color: white;
+}
+
+.icons a:focus {
+  outline: none;
+}
+
+.windowBar {
+  text-align: left;
+  background-color: rgba(96, 165, 250, 1);
+  border-top: 3px solid rgba(147, 197, 253, 1);
+  width: 185px;
+  padding-right: 8px;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+.windowBar > p {
+  margin: 2px 0 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.windowBar img {
+  margin-left: 8px;
+  margin-top: 4px;
+}
+
+.windowBar.notFocused {
+  background-color: rgba(29, 78, 216, 1);
+  border-top: 3px solid rgba(29, 78, 216, 1);
+}
+
+.hidden {
+  display: none;
 }

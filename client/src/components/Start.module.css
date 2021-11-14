@@ -3,6 +3,8 @@
   grid-template-rows: 1fr 8fr 1fr;
   height: 100vh;
   color: white;
+  width: 100%;
+
   font-size: 18px;
 }
 
@@ -15,7 +17,6 @@
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
   border-top: 3px solid white;
   border-bottom: 3px solid white;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,6 +44,18 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+}
+
+.infoContenidoApagado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+.infoContenidoApagado img {
+  height: 200px;
+  width: 250px;
 }
 
 .izquierdaContenido {
@@ -118,11 +131,7 @@
   border-radius: 4px;
   border-top: 2px solid rgba(18, 67, 202, 0);
   cursor: pointer;
-}
-
-.entrarUsuario:hover {
-  background-color: rgba(29, 79, 216, 0.829);
-  border-top: 2px solid rgba(18, 67, 202, 1);
+  animation: fadeIn 3s;
 }
 
 .windows {
@@ -130,6 +139,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.entrarUsuario:hover {
+  background-color: rgba(29, 79, 216, 0.829);
+  border-top: 2px solid rgba(18, 67, 202, 1);
 }
 
 .usuario {
