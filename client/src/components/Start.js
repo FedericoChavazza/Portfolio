@@ -3,12 +3,16 @@ import styles from "./Start.module.css";
 import { MdOutlineHighlightOff } from "react-icons/md";
 import { useHistory } from "react-router";
 import { ShuttingDown } from "./ShuttingDown";
+import { useDispatch } from "react-redux";
+import { windowActionClose } from "./../actions/actions";
 
 export function Start() {
   const history = useHistory();
 
   const [carga, setCarga] = useState(false);
   const [turnOff, setTurnOff] = useState(false);
+
+  const dispatch = useDispatch();
 
   function cargando() {
     setCarga(true);
@@ -19,6 +23,7 @@ export function Start() {
 
   function apagar() {
     setTurnOff(true);
+    dispatch(windowActionClose("shutting down..."));
     setTimeout(() => {
       setTurnOff(false);
       history.push("/turnedOff");
