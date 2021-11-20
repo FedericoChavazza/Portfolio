@@ -142,6 +142,7 @@ const archives = [
         "Sequelize",
         "Redux",
       ],
+      gitCode: "https://github.com/FedericoChavazza/PI-Countries",
     },
   },
   {
@@ -150,7 +151,7 @@ const archives = [
     content: {
       title: "Weather App",
       renderImg: "",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem id, aliquid doloribus mollitia voluptatem explicabo ipsam provident et, vero ratione reiciendis culpa neque, totam molestiae nesciunt eos accusantium ad similique!",
+      text: "An App where you can search the weather of every city in the world!. Pretty much it :c.",
       link: "http://google.com",
     },
   },
@@ -161,8 +162,9 @@ const archives = [
       title: "Online chat App",
       renderImg: "",
       text: "An Online Chat where you choose an specific room, a name and talk with all the people you want! the chat works in real time!. ",
-      link: "http://google.com",
+      link: "",
       techStack: ["React", "Socket.io", " ExpressJS"],
+      gitCode: "https://github.com/FedericoChavazza/ONLINE-CHAT",
     },
   },
   {
@@ -172,8 +174,8 @@ const archives = [
       title: "Scrum.io",
       renderImg:
         "https://portfolio-lamaolo.vercel.app/_next/image?url=%2Fscrum-io%2Fscrum-io-1.JPG&w=1920&q=75",
-      text: "Scrum.io was developed by a team of 7 people, It was the Henry's FullStack bootcamp last project. Scrum.io is a SCRUM management system, designed to provide a set of tools for both SCRUM masters and developers. Including many features like getting the information of every developer performance in a chart, notifications, a chat and changes in real time, an interactive poker planning with rooms. In this project i worked in both front and backend, doing too some real-time features",
-      link: "http://google.com",
+      text: "Scrum.io was developed by a team of 7 people, It was the Henry's FullStack bootcamp last project. Scrum.io is a SCRUM management system, designed to provide a set of tools for both SCRUM masters and developers. Including many features like getting the information of every developer performance in a chart, notifications, a chat and changes in real time, an interactive poker planning with rooms. In this project i worked in both front and backend, doing too some real-time features.",
+      link: "https://scrum-io.vercel.app",
       techStack: [
         "React",
         "Socket.io",
