@@ -160,7 +160,7 @@ const archives = [
     content: {
       title: "Online chat App",
       renderImg: "",
-      text: "An Online Chat where you choose an specific room, a name and talk with all the people you want! the chat works in real time. ",
+      text: "An Online Chat where you choose an specific room, a name and talk with all the people you want! the chat works in real time!. ",
       link: "http://google.com",
       techStack: ["React", "Socket.io", " ExpressJS"],
     },
@@ -172,7 +172,7 @@ const archives = [
       title: "Scrum.io",
       renderImg:
         "https://portfolio-lamaolo.vercel.app/_next/image?url=%2Fscrum-io%2Fscrum-io-1.JPG&w=1920&q=75",
-      text: "asdasdasd",
+      text: "Scrum.io was developed by a team of 7 people, It was the Henry's FullStack bootcamp last project. Scrum.io is a SCRUM management system, designed to provide a set of tools for both SCRUM masters and developers. Including many features like getting the information of every developer performance in a chart, notifications, a chat and changes in real time, an interactive poker planning with rooms. In this project i worked in both front and backend, doing too some real-time features",
       link: "http://google.com",
       techStack: [
         "React",
