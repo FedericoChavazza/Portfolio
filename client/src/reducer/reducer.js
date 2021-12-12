@@ -3,6 +3,8 @@ const initialState = {
   grayscale: false,
   turnedOffComputer: false,
   windowsAction: "",
+  menuCondition: false,
+  shuttingDown: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -86,6 +88,18 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         windowsAction: action.payload,
+      };
+    }
+    case "MENU_CONDITION": {
+      return {
+        ...state,
+        menuCondition: action.payload,
+      };
+    }
+    case "SHUTTING_DOWN_SOUND": {
+      return {
+        ...state,
+        shuttingDown: action.payload,
       };
     }
     default:

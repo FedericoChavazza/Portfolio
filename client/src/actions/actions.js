@@ -7,6 +7,13 @@ export function openWindow(data) {
   };
 }
 
+export function menuCondition(boolean) {
+  return {
+    payload: boolean,
+    type: "MENU_CONDITION",
+  };
+}
+
 export function closeWindow(id) {
   return {
     payload: id,
@@ -53,5 +60,12 @@ export function windowActionClose(string) {
   return {
     payload: string,
     type: "WINDOW_ACTION_CLOSE",
+  };
+}
+
+export function shuttingDownSound(boolean) {
+  return {
+    payload: boolean,
+    type: "SHUTTING_DOWN_SOUND",
   };
 }

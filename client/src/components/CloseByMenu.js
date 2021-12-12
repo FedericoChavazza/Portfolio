@@ -5,7 +5,9 @@ import { useDispatch } from "react-redux";
 import { grayscale, windowActionClose } from "../actions/actions";
 import { ShuttingDown } from "./ShuttingDown";
 import { Redirect, useHistory } from "react-router";
-import { turnedOffScreen } from "../actions/actions";
+import { turnedOffScreen, shuttingDownSound } from "../actions/actions";
+import useSound from "use-sound";
+import soundTest from "./../sounds/windows_shutting_down.mp3";
 
 const customStyles = {
   content: {
@@ -35,6 +37,7 @@ const customStyles = {
 export function CloseByMenu({ setTurnOffOption }) {
   const dispatch = useDispatch();
 
+  const [soundData] = useSound(soundTest);
   const [closeComputer, setCloseComputer] = useState(false);
   const history = useHistory();
 
@@ -46,21 +49,25 @@ export function CloseByMenu({ setTurnOffOption }) {
   function turnOffComputer() {
     dispatch(turnedOffScreen(true));
     dispatch(grayscale(false));
+    dispatch(shuttingDownSound(true));
+    soundData();
     dispatch(windowActionClose("shutting down..."));
     setTimeout(() => {
       dispatch(turnedOffScreen(false));
       history.push("/turnedOff");
-    }, 3000);
+    }, 4000);
   }
 
   function resetComputer() {
     dispatch(turnedOffScreen(true));
     dispatch(grayscale(false));
+    dispatch(shuttingDownSound(true));
+    soundData();
     dispatch(windowActionClose("restarting..."));
     setTimeout(() => {
       dispatch(turnedOffScreen(false));
       history.push("/");
-    }, 3000);
+    }, 4000);
   }
 
   return (

@@ -5,6 +5,9 @@ import { CloseByMenu } from "./CloseByMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { grayscale } from "../actions/actions";
 import { openWindow } from "../actions/actions";
+import useSound from "use-sound";
+import clickOff from "./../sounds/windows_log_off.mp3";
+import { menuCondition } from "../actions/actions";
 
 // ⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷
 // ⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣇
@@ -33,6 +36,7 @@ export function Menu({ openMenu, setOpenMenu }) {
     console.log("me tocaron aca");
   }
 
+  const [logOffSound] = useSound(clickOff);
   const [closeComputer, setCloseComputer] = useState(false);
   const [turnOffOption, setTurnOffOption] = useState(false);
 
@@ -58,7 +62,10 @@ export function Menu({ openMenu, setOpenMenu }) {
         <div className={styles.column2}></div>
       </div>
       <footer className={styles.footer}>
-        <div className={styles.buttonContainer} onClick={(e) => returnStart(e)}>
+        <div
+          className={styles.buttonContainer}
+          onClick={(e) => (returnStart(e), logOffSound())}
+        >
           <button>
             <svg
               className="w-5 h-5"
@@ -78,7 +85,9 @@ export function Menu({ openMenu, setOpenMenu }) {
           Log off
         </div>
         <div
-          onClick={() => setTurnOffOption(true)}
+          onClick={() => (
+            setTurnOffOption(true), dispatch(menuCondition(true))
+          )}
           className={styles.buttonContainer}
         >
           <button>

@@ -15,6 +15,8 @@ import {
 } from "../actions/actions";
 import { ShuttingDown } from "./ShuttingDown";
 import { useHour } from "../hook/useHour";
+import useSound from "use-sound";
+import clickSound from "./../sounds/windows_click.mp3";
 
 export default function Home() {
   const data = useSelector((state) => state.data);
@@ -22,6 +24,7 @@ export default function Home() {
   const closedState = useSelector((state) => state.turnedOffComputer);
   const menuState = useRef(false);
   const isMotoG4 = window.matchMedia("(max-width: 500px)").matches;
+  const shuttingDownComputer = useSelector((state) => state.shuttingDown);
 
   const dispatch = useDispatch();
 
@@ -35,6 +38,7 @@ export default function Home() {
     aboutme: 0,
     myprojects: 0,
   });
+  const [clickSoundMaker] = useSound(clickSound);
   const [openMenu, setOpenMenu] = useState(false);
   const [selected, setSelected] = useState({});
   const hour = useHour();
@@ -79,6 +83,10 @@ export default function Home() {
   useEffect(() => {
     document.addEventListener("click", handleClick);
     document.addEventListener("contextmenu", handleContextMenu);
+    if (!shuttingDownComputer) {
+      document.addEventListener("click", clickSoundMaker());
+    }
+
     return () => {
       document.removeEventListener("click", handleClick);
       document.removeEventListener("contextmenu", handleContextMenu);
