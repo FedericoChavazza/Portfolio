@@ -41,7 +41,7 @@ export function Start() {
                 <div className={styles.izquierdaContenido}>
                   <div className={styles.windows}>
                     <img src="https://i.imgur.com/ekggMI8.png" alt="" />
-                    <p>To begin, click the Demo</p>
+                    <p>To begin, click the User</p>
                   </div>
                 </div>
                 <div className={styles.derechaContenido}>

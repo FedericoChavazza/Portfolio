@@ -147,16 +147,6 @@ const archives = [
   },
   {
     img: "https://i.imgur.com/4sQ8mdp.png",
-    name: "Weather App.txt",
-    content: {
-      title: "Weather App",
-      renderImg: "",
-      text: "An App where you can search the weather of every city in the world!. Pretty much it :c.",
-      link: "http://google.com",
-    },
-  },
-  {
-    img: "https://i.imgur.com/4sQ8mdp.png",
     name: "Online chat App.txt",
     content: {
       title: "Online chat App",
