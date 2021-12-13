@@ -31,6 +31,8 @@
   z-index: 10000;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .grayHeader {
