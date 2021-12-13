@@ -1,5 +1,7 @@
 body {
   font-family: Tahoma, Verdana, Segoe, sans-serif;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 a {
@@ -27,4 +29,8 @@ a {
   to {
     opacity: 100%;
   }
+}
+
+html {
+  height: -webkit-fill-available;
 }
