@@ -133,7 +133,6 @@ const archives = [
       title: "Countries App",
       renderImg: "",
       text: "A full-stack SPA that consumes the country API where you can search for every country in the world! Search them by input, learn about their specific information and much more! You can create activities to recommend in the countries you like! Like walking or swimming in Uruguay. You can too, edit the activity if you have created one and you are not sure about what you just wrote earlier. At last, you can filter them by population, name, activity and continent",
-      link: "http://google.com",
       techStack: [
         "NodeJS",
         "ExpressJS",

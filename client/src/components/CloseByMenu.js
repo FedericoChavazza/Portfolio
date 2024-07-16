@@ -1,10 +1,9 @@
 import Modal from "react-modal";
 import styles from "./CloseByMenu.module.css";
-import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { grayscale, windowActionClose } from "../actions/actions";
-import { ShuttingDown } from "./ShuttingDown";
-import { Redirect, useHistory } from "react-router";
+
+import { useHistory } from "react-router";
 import { turnedOffScreen, shuttingDownSound } from "../actions/actions";
 import useSound from "use-sound";
 import soundTest from "./../sounds/windows_shutting_down.mp3";
@@ -38,7 +37,6 @@ export function CloseByMenu({ setTurnOffOption }) {
   const dispatch = useDispatch();
 
   const [soundData] = useSound(soundTest);
-  const [closeComputer, setCloseComputer] = useState(false);
   const history = useHistory();
 
   function close() {

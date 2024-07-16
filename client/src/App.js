@@ -2,9 +2,8 @@ import "./App.css";
 import styles from "./App.module.css";
 import Home from "./components/Home";
 import { Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { Start } from "./components/Start";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { TurnOffComputer } from "./components/TurnOff";
 
 // import clickSound from "/click.mp3";

@@ -1,14 +1,12 @@
 import { React, useState, useEffect, useRef, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+
 import styles from "./Home.module.css";
-import Modal from "react-modal";
 import { FolderView } from "./FolderView";
 import GIT from "./../Images/nashe.png";
 import { Menu } from "./Menu";
 import {
   openWindow,
-  closeWindow,
   focusWindow,
   openMinimizedWindow,
   minimizedWindow,
@@ -20,7 +18,7 @@ import clickSound from "./../sounds/windows_click.mp3";
 
 export default function Home() {
   const data = useSelector((state) => state.data);
-  const grayscale = useSelector((state) => state.grayscale);
+
   const closedState = useSelector((state) => state.turnedOffComputer);
   const menuState = useRef(false);
   const isMotoG4 = window.matchMedia("(max-width: 500px)").matches;
@@ -30,7 +28,6 @@ export default function Home() {
 
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
   const [show, setShow] = useState(false);
-  const [folder, setFolder] = useState(false);
   const [clicks, setClicks] = useState({
     linkedin: 0,
     github: 0,
@@ -40,7 +37,6 @@ export default function Home() {
   });
   const [clickSoundMaker] = useSound(clickSound);
   const [openMenu, setOpenMenu] = useState(false);
-  const [selected, setSelected] = useState({});
   const hour = useHour();
 
   function timesClick(option, e) {
@@ -149,6 +145,7 @@ export default function Home() {
                     linkedin: clicks.linkedin + 1,
                   });
                 }}
+                rel="noreferrer"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
@@ -175,6 +172,7 @@ export default function Home() {
                 id="github"
                 target="_blank"
                 href="https://github.com/FedericoChavazza"
+                rel="noreferrer"
               >
                 <img src={GIT} alt="GitHub" />
                 <div>GitHub</div>
@@ -198,6 +196,7 @@ export default function Home() {
                 id="gmail"
                 target="_blank"
                 href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=fchavazza@gmail.com&su=Subject&body=Body%20Text"
+                rel="noreferrer"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/281/281769.png"

@@ -6,13 +6,13 @@ const Notepad = ({ content }) => {
       <div className={styles.container}>
         <div className={styles.content} contentEditable={true}>
           <p>
-            Hello there! My name is Federico Chavazza, I love with all my heart
-            painting and designing. I started programming at Henry's bootcamp,
-            not even knowing what backend or even frontend was, but once I found
-            out, my true passion for web designing and learning new tech
-            beginned! I mainly work as a React frontend developer(which i love).
-            I have a keen eye for detail and usability and my work is standards
-            compliant and accessible.{" "}
+            Hello there! My name is Federico Chavazza. I am deeply passionate
+            about painting and designing. I started programming at Henry's
+            bootcamp without even knowing what backend or frontend development
+            was. Once I discovered them, my true passion for web design and
+            learning new technologies began! I mainly work as a React frontend
+            developer (which I love). I have a keen eye for detail and
+            usability, and my work is standards-compliant and accessible.
           </p>
         </div>
       </div>
@@ -57,6 +57,7 @@ const Notepad = ({ content }) => {
               id="gitcode"
               style={{ textDecoration: "none", color: "black" }}
               href={content.gitCode}
+              rel="noreferrer"
             >
               {" "}
               Click Here!{" "}

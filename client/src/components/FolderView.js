@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+
 import Draggable from "react-draggable"; // The default
 import styles from "./FolderView.module.css";
 import { closeWindow, minimizedWindow, focusWindow } from "../actions/actions";
-import { useDispatch, useSelector } from "react-redux";
-import Modal from "react-modal";
+import { useDispatch } from "react-redux";
 
 import Explorer from "./Explorer";
 import Notepad from "./Notepad";
@@ -25,11 +24,6 @@ export const FolderView = ({
   const isIpad = window.matchMedia("(max-width: 900px)").matches;
 
   const [isMaximized, setIsMaximized] = useState(isIpad);
-
-  function globalDelete(e) {
-    e.preventDefault();
-    // dispatch(deleteData(oneData));
-  }
 
   const handleCloseWindows = () => {
     dispatch(closeWindow(id));
