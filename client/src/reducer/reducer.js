@@ -109,7 +109,7 @@ const reducer = (state = initialState, action) => {
 
 /* 
   [ 
-    { id: 1, windowTitle: "My projects", isFocused: true, img: "http://", isMinimized: false }
+    { id: 1, windowTitle: "My projects", isFocused: true, img: "https://", isMinimized: false }
   ]
 */
 
