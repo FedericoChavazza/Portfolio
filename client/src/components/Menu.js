@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import styles from "./Menu.module.css";
 import { CloseByMenu } from "./CloseByMenu";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { grayscale } from "../actions/actions";
 import { openWindow } from "../actions/actions";
 import useSound from "use-sound";
 import clickOff from "./../sounds/windows_log_off.mp3";
 import { menuCondition } from "../actions/actions";
+import RUN_IMAGE from "./../Images/Run_2001.webp";
 
 // ⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷
 // ⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣇
@@ -28,7 +29,6 @@ export function Menu({ openMenu, setOpenMenu }) {
   const history = useHistory();
 
   const dispatch = useDispatch();
-  const closedState = useSelector((state) => state.turnedOffComputer);
 
   function returnStart(e) {
     e.preventDefault();
@@ -51,7 +51,7 @@ export function Menu({ openMenu, setOpenMenu }) {
     >
       <header className={styles.top}>
         <img src="https://preview.redd.it/vd7n2wf8oed51.jpg?width=4200&format=pjpg&auto=webp&s=580454b82e63d7446b7204b2d1c743f9572e1b12" />
-        <div>Demo</div>
+        <div>Federico Chavazza</div>
       </header>
       <div className={styles.content}>
         <div className={styles.column1}>
@@ -185,7 +185,7 @@ const ICONS = [
   },
   {
     id: 11,
-    img: "https://help4windows.com/~webfiles/icons_win_xp/winxp_ico_shell32_dll-024.jpg",
+    img: RUN_IMAGE,
     name: "Run",
   },
 ];

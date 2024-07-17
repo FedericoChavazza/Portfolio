@@ -15,6 +15,7 @@ import { ShuttingDown } from "./ShuttingDown";
 import { useHour } from "../hook/useHour";
 import useSound from "use-sound";
 import clickSound from "./../sounds/windows_click.mp3";
+import Paint from "./Paint";
 
 export default function Home() {
   const data = useSelector((state) => state.data);
@@ -38,32 +39,6 @@ export default function Home() {
   const [clickSoundMaker] = useSound(clickSound);
   const [openMenu, setOpenMenu] = useState(false);
   const hour = useHour();
-
-  function timesClick(option, e) {
-    setClicks({
-      linkedin: 0,
-      github: 0,
-      gmail: 0,
-      aboutme: 0,
-      myprojects: 0,
-      [option]: clicks[option] ? clicks[option] + 1 : 1,
-    });
-  }
-
-  const setTimesClick = (e) => {
-    if (clicks[e.target.id] < 1) {
-      e.preventDefault();
-    }
-
-    setClicks({
-      linkedin: 0,
-      github: 0,
-      gmail: 0,
-      aboutme: 0,
-      myprojects: 0,
-      [e.target.id]: clicks[e.target.id] + 1,
-    });
-  };
 
   const handleContextMenu = useCallback(
     (event) => {
@@ -180,7 +155,7 @@ export default function Home() {
             </button>
             <button className={styles.singleIconClick}>
               <a
-                onClick={(e) => {
+                onDoubleClick={(e) => {
                   if (clicks.gmail < 1) {
                     e.preventDefault();
                   }
@@ -207,32 +182,14 @@ export default function Home() {
             </button>
             <button className={styles.singleIconClick}>
               <div
-                onClick={(e) => {
-                  if (clicks.aboutme > 0) {
-                    dispatch(
-                      openWindow({
-                        windowTitle: "About me.txt - Notepad",
-                        kind: "notepad",
-                        img: "https://i.imgur.com/4sQ8mdp.png",
-                      })
-                    );
-
-                    setClicks({
-                      linkedin: 0,
-                      github: 0,
-                      gmail: 0,
-                      myprojects: 0,
-                      aboutme: 0,
-                    });
-                  } else {
-                    setClicks({
-                      linkedin: 0,
-                      github: 0,
-                      gmail: 0,
-                      myprojects: 0,
-                      aboutme: clicks.aboutme + 1,
-                    });
-                  }
+                onDoubleClick={() => {
+                  dispatch(
+                    openWindow({
+                      windowTitle: "About me.txt - Notepad",
+                      kind: "notepad",
+                      img: "https://i.imgur.com/4sQ8mdp.png",
+                    })
+                  );
                 }}
               >
                 <img src="https://i.imgur.com/4sQ8mdp.png" alt="TXT" />
@@ -249,31 +206,14 @@ export default function Home() {
             </button>
             <button className={styles.singleIconClick}>
               <div
-                onClick={(e) => {
-                  if (clicks.myprojects > 0) {
-                    dispatch(
-                      openWindow({
-                        windowTitle: "My Projects - Explorer",
-                        kind: "explorer",
-                        img: "https://i.imgur.com/cGHOFq0.png",
-                      })
-                    );
-                    setClicks({
-                      linkedin: 0,
-                      github: 0,
-                      aboutme: 0,
-                      gmail: 0,
-                      myprojects: 0,
-                    });
-                  } else {
-                    setClicks({
-                      linkedin: 0,
-                      github: 0,
-                      aboutme: 0,
-                      gmail: 0,
-                      myprojects: clicks.myprojects + 1,
-                    });
-                  }
+                onDoubleClick={() => {
+                  dispatch(
+                    openWindow({
+                      windowTitle: "My Projects - Explorer",
+                      kind: "explorer",
+                      img: "https://i.imgur.com/cGHOFq0.png",
+                    })
+                  );
                 }}
               >
                 <img src="https://i.imgur.com/cGHOFq0.png" alt="Folder" />
@@ -288,6 +228,31 @@ export default function Home() {
                 </div>
               </div>
             </button>
+            <button className={styles.singleIconClick}>
+              <div
+                onDoubleClick={() => {
+                  dispatch(
+                    openWindow({
+                      windowTitle: "Paint",
+                      kind: "paint",
+                      img: "https://i.imgur.com/YgnoeXu.png",
+                    })
+                  );
+                }}
+              >
+                <img src="https://i.imgur.com/YgnoeXu.png" alt="Paint" />
+                <div
+                  style={{
+                    fontSize: "16px",
+                    textShadow: "0 0 3px black",
+                    color: "white",
+                  }}
+                >
+                  Paint
+                </div>
+              </div>
+            </button>
+            {/* <Paint /> */}
           </div>
 
           <footer className={styles.footerContainer}>
@@ -331,6 +296,7 @@ export default function Home() {
                       <img
                         style={{ height: "16px", width: "16px" }}
                         src={value.img}
+                        alt=""
                       />
                       {<p>{value.windowTitle} </p>}
                     </div>

@@ -1,5 +1,3 @@
-import { bindActionCreators } from "redux";
-
 export function openWindow(data) {
   return {
     payload: { ...data, isFocused: true, isMinimized: false },

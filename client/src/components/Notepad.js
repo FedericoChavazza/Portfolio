@@ -1,5 +1,7 @@
 import styles from "./Notepad.module.css";
 
+import MyCV from "./../cv/Federico_Martin_Chavazza.pdf";
+
 const Notepad = ({ content }) => {
   if (!content) {
     return (
@@ -14,6 +16,27 @@ const Notepad = ({ content }) => {
             developer (which I love). I have a keen eye for detail and
             usability, and my work is standards-compliant and accessible.
           </p>
+          <div className={styles.myInfo}>
+            <a
+              contentEditable={false}
+              className={styles.downloadCV}
+              id="downloadCV"
+              href={MyCV}
+              download="Federico_Chavazza_CV.pdf"
+            >
+              Here is my CV, Download it!
+            </a>
+            <a
+              contentEditable={false}
+              className={styles.myGithub}
+              id="github"
+              href="https://github.com/FedericoChavazza"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Here is my Github, Join!
+            </a>
+          </div>
         </div>
       </div>
     );
@@ -45,7 +68,17 @@ const Notepad = ({ content }) => {
             <p>
               -------------------------------Link-------------------------------
             </p>
-            {content.link && content.link} <br />
+            <a
+              contentEditable={false}
+              target="_blank"
+              id="gitcode"
+              style={{ textDecoration: "none", color: "black" }}
+              href={content.link}
+              rel="noreferrer"
+            >
+              {content.link && content.link}
+            </a>
+
             <p>
               ----------------------------Github
               code----------------------------
@@ -53,14 +86,16 @@ const Notepad = ({ content }) => {
             <a
               contentEditable={false}
               target="_blank"
-              href={content.gitCode}
               id="gitcode"
-              style={{ textDecoration: "none", color: "black" }}
-              href={content.gitCode}
+              style={{
+                textDecoration: "none",
+                color: "black",
+                cursor: content?.gitCode ? "pointer" : "default",
+              }}
+              href={content?.gitCode ?? undefined}
               rel="noreferrer"
             >
-              {" "}
-              Click Here!{" "}
+              {content?.gitCode ? "Click Here!" : "Private"}
             </a>
             <p>
               {" "}

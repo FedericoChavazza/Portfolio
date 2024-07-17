@@ -86,10 +86,10 @@ export function Start() {
                       alt="user img"
                     />
                     {!carga ? (
-                      <div>Demo</div>
+                      <div>Federico Chavazza</div>
                     ) : (
                       <div className={styles.usuario}>
-                        <div>Demo</div>
+                        <div>Federico Chavazza</div>
                         <div
                           style={{
                             fontSize: "16px",

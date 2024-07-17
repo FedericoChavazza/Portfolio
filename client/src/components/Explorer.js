@@ -3,6 +3,84 @@ import styles from "./FolderView.module.css";
 import { openWindow } from "../actions/actions";
 import { useDispatch } from "react-redux";
 
+const archives = [
+  {
+    img: "https://i.imgur.com/4sQ8mdp.png",
+    name: "Story-teller-IA.txt",
+    content: {
+      title: "Story-teller",
+      renderImg: "",
+      text: "A story generator created by AI. If you fill out some of the form fields, a spaceship will take off. The loading screen will display the generated AI story once it has loaded",
+      link: "https://story-teller-ia.vercel.app",
+      techStack: ["React", "Python"],
+      gitCode: "https://github.com/FedericoChavazza/story-teller",
+    },
+  },
+  {
+    img: "https://i.imgur.com/4sQ8mdp.png",
+    name: "Grocially.co.txt",
+    content: {
+      title: "Grocially.co",
+      renderImg: "",
+      text: "A story generator created by AI. If you fill out some of the form fields, a spaceship will take off. The loading screen will display the generated AI story once it has loaded",
+      link: "https://app.grocially.co/",
+      techStack: ["NextJS", "Typescript", "Ruby on Rails"],
+      gitCode: null,
+    },
+  },
+  {
+    img: "https://i.imgur.com/4sQ8mdp.png",
+    name: "Countries App.txt",
+    content: {
+      title: "Countries App",
+      renderImg: "",
+      text: "A full-stack SPA that consumes the country API where you can search for every country in the world! Search them by input, learn about their specific information and much more! You can create activities to recommend in the countries you like! Like walking or swimming in Uruguay. You can too, edit the activity if you have created one and you are not sure about what you just wrote earlier. At last, you can filter them by population, name, activity and continent",
+      techStack: [
+        "NodeJS",
+        "ExpressJS",
+        "React",
+        "PostgreSQL",
+        "Sequelize",
+        "Redux",
+      ],
+      gitCode: "https://github.com/FedericoChavazza/PI-Countries",
+    },
+  },
+  {
+    img: "https://i.imgur.com/4sQ8mdp.png",
+    name: "Online chat App.txt",
+    content: {
+      title: "Online chat App",
+      renderImg: "",
+      text: "An Online Chat where you choose an specific room, a name and talk with all the people you want! the chat works in real time!. ",
+      link: "",
+      techStack: ["React", "Socket.io", " ExpressJS"],
+      gitCode: "https://github.com/FedericoChavazza/ONLINE-CHAT",
+    },
+  },
+  {
+    img: "https://i.imgur.com/4sQ8mdp.png",
+    name: "Scrum.io.txt",
+    content: {
+      title: "Scrum.io",
+      renderImg:
+        "https://portfolio-lamaolo.vercel.app/_next/image?url=%2Fscrum-io%2Fscrum-io-1.JPG&w=1920&q=75",
+      text: "Scrum.io was developed by a team of 7 people, It was the Henry's FullStack bootcamp last project. Scrum.io is a SCRUM management system, designed to provide a set of tools for both SCRUM masters and developers. Including many features like getting the information of every developer performance in a chart, notifications, a chat and changes in real time, an interactive poker planning with rooms. In this project i worked in both front and backend, doing too some real-time features.",
+      link: "https://scrum-io.vercel.app",
+      techStack: [
+        "React",
+        "Socket.io",
+        "MongoDB",
+        "ExpressJS",
+        "NodeJS",
+        "Socket.io",
+        "Redux",
+      ],
+      gitCode: "https://github.com/SHIMER-jpg/Scrum.io/",
+    },
+  },
+];
+
 const Explorer = ({ isMotoG4 }) => {
   const dispatch = useDispatch();
 
@@ -51,7 +129,7 @@ const Explorer = ({ isMotoG4 }) => {
                 );
               }}
             >
-              <img style={{ cursor: "pointer" }} src={value.img} />
+              <img style={{ cursor: "pointer" }} src={value.img} alt="" />
               <div className={styles.infoNote}>
                 <div
                   style={{
@@ -125,57 +203,4 @@ const SpoilerBox = ({ title, description, isOpen: defaultOpen }) => {
   );
 };
 
-const archives = [
-  {
-    img: "https://i.imgur.com/4sQ8mdp.png",
-    name: "Countries App.txt",
-    content: {
-      title: "Countries App",
-      renderImg: "",
-      text: "A full-stack SPA that consumes the country API where you can search for every country in the world! Search them by input, learn about their specific information and much more! You can create activities to recommend in the countries you like! Like walking or swimming in Uruguay. You can too, edit the activity if you have created one and you are not sure about what you just wrote earlier. At last, you can filter them by population, name, activity and continent",
-      techStack: [
-        "NodeJS",
-        "ExpressJS",
-        "React",
-        "PostgreSQL",
-        "Sequelize",
-        "Redux",
-      ],
-      gitCode: "https://github.com/FedericoChavazza/PI-Countries",
-    },
-  },
-  {
-    img: "https://i.imgur.com/4sQ8mdp.png",
-    name: "Online chat App.txt",
-    content: {
-      title: "Online chat App",
-      renderImg: "",
-      text: "An Online Chat where you choose an specific room, a name and talk with all the people you want! the chat works in real time!. ",
-      link: "",
-      techStack: ["React", "Socket.io", " ExpressJS"],
-      gitCode: "https://github.com/FedericoChavazza/ONLINE-CHAT",
-    },
-  },
-  {
-    img: "https://i.imgur.com/4sQ8mdp.png",
-    name: "Scrum.io.txt",
-    content: {
-      title: "Scrum.io",
-      renderImg:
-        "https://portfolio-lamaolo.vercel.app/_next/image?url=%2Fscrum-io%2Fscrum-io-1.JPG&w=1920&q=75",
-      text: "Scrum.io was developed by a team of 7 people, It was the Henry's FullStack bootcamp last project. Scrum.io is a SCRUM management system, designed to provide a set of tools for both SCRUM masters and developers. Including many features like getting the information of every developer performance in a chart, notifications, a chat and changes in real time, an interactive poker planning with rooms. In this project i worked in both front and backend, doing too some real-time features.",
-      link: "https://scrum-io.vercel.app",
-      techStack: [
-        "React",
-        "Socket.io",
-        "MongoDB",
-        "ExpressJS",
-        "NodeJS",
-        "Socket.io",
-        "Redux",
-      ],
-      gitCode: "https://github.com/SHIMER-jpg/Scrum.io/",
-    },
-  },
-];
 export default Explorer;

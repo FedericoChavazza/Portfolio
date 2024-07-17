@@ -20,3 +20,19 @@
   width: 100%;
   max-width: 550px;
 }
+
+.myInfo {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px;
+  gap: 30px;
+}
+
+.myGithub,
+.downloadCV {
+  cursor: pointer;
+  color: black;
+}
