@@ -50,7 +50,10 @@ export function Menu({ openMenu, setOpenMenu }) {
       className={!turnOffOption ? styles.showMenu : styles.notShowMenu}
     >
       <header className={styles.top}>
-        <img src="https://preview.redd.it/vd7n2wf8oed51.jpg?width=4200&format=pjpg&auto=webp&s=580454b82e63d7446b7204b2d1c743f9572e1b12" />
+        <img
+          src="https://preview.redd.it/vd7n2wf8oed51.jpg?width=4200&format=pjpg&auto=webp&s=580454b82e63d7446b7204b2d1c743f9572e1b12"
+          alt="Icon"
+        />
         <div>Federico Chavazza</div>
       </header>
       <div className={styles.content}>
@@ -64,7 +67,10 @@ export function Menu({ openMenu, setOpenMenu }) {
       <footer className={styles.footer}>
         <div
           className={styles.buttonContainer}
-          onClick={(e) => (returnStart(e), logOffSound())}
+          onClick={(e) => {
+            returnStart(e);
+            logOffSound();
+          }}
         >
           <button>
             <svg
@@ -85,9 +91,10 @@ export function Menu({ openMenu, setOpenMenu }) {
           Log off
         </div>
         <div
-          onClick={() => (
-            setTurnOffOption(true), dispatch(menuCondition(true))
-          )}
+          onClick={() => {
+            setTurnOffOption(true);
+            dispatch(menuCondition(true));
+          }}
           className={styles.buttonContainer}
         >
           <button>

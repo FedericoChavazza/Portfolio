@@ -57,7 +57,7 @@ export function Start() {
       soundShuttingDown();
       dispatch(shuttingDownSound(false));
     }
-  }, [offSound]);
+  }, [dispatch, offSound, soundShuttingDown]);
 
   return (
     <div className={styles.contenedor}>

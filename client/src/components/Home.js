@@ -15,7 +15,6 @@ import { ShuttingDown } from "./ShuttingDown";
 import { useHour } from "../hook/useHour";
 import useSound from "use-sound";
 import clickSound from "./../sounds/windows_click.mp3";
-import Paint from "./Paint";
 
 export default function Home() {
   const data = useSelector((state) => state.data);
@@ -27,7 +26,6 @@ export default function Home() {
 
   const dispatch = useDispatch();
 
-  const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
   const [show, setShow] = useState(false);
   const [clicks, setClicks] = useState({
     linkedin: 0,
@@ -40,14 +38,11 @@ export default function Home() {
   const [openMenu, setOpenMenu] = useState(false);
   const hour = useHour();
 
-  const handleContextMenu = useCallback(
-    (event) => {
-      event.preventDefault();
-      setAnchorPoint({ x: event.pageX, y: event.pageY });
-      setShow(true);
-    },
-    [setAnchorPoint]
-  );
+  const handleContextMenu = useCallback((event) => {
+    event.preventDefault();
+
+    setShow(true);
+  }, []);
 
   const handleClick = useCallback(() => (show ? setShow(false) : null), [show]);
 
@@ -72,7 +67,7 @@ export default function Home() {
       let targetElement = event.target; // clicked element
 
       do {
-        if (targetElement == flyoutElement || targetElement == imgElement) {
+        if (targetElement === flyoutElement || targetElement === imgElement) {
           // This is a click inside. Do nothing, just return.
           return;
         }
@@ -252,7 +247,6 @@ export default function Home() {
                 </div>
               </div>
             </button>
-            {/* <Paint /> */}
           </div>
 
           <footer className={styles.footerContainer}>

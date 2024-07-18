@@ -4,6 +4,7 @@ const Paint = () => {
   return (
     <div className={styles.container}>
       <iframe
+        title="paint"
         src="https://jspaint.app/"
         onLoad={(e) => {
           e.target.style.height = "100%";

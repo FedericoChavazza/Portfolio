@@ -28,7 +28,11 @@ export function TurnOffComputer() {
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>
-        <img src={isOff ? turnOn : turnOff} onClick={() => TurnOnComputer()} />
+        <img
+          src={isOff ? turnOn : turnOff}
+          onClick={() => TurnOnComputer()}
+          alt="turnoff"
+        />
       </div>
     </div>
   );

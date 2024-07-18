@@ -66,7 +66,11 @@ export const FolderView = ({
       >
         <div id="windowHead" className={styles.windowHead}>
           <div>
-            <img style={{ margin: "5px", marginRight: "10px" }} src={img} />
+            <img
+              style={{ margin: "5px", marginRight: "10px" }}
+              src={img}
+              alt=""
+            />
             {windowTitle}
           </div>
           <div
