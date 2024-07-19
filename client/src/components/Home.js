@@ -161,11 +161,17 @@ export default function Home() {
 
   const hasAlreadyExplained = useCallback(() => {
     clippy.stop();
+    if (windowSize.width < 500) {
+      clippy.moveTo(
+        getClippyMaxMovement(2, "width"),
+        getClippyMaxMovement(80, "height")
+      );
+    }
     clippy.moveTo({
       x: getClippyMaxMovement(80, "width"),
       y: getClippyMaxMovement(80, "height"),
     });
-  }, [clippy, getClippyMaxMovement]);
+  }, [clippy, getClippyMaxMovement, windowSize.width]);
 
   const clippyExplain = useCallback(
     (name, dialog, move, gesture) => {
@@ -276,10 +282,15 @@ export default function Home() {
           clippyExplain(
             "paint",
             "Let's see how talented of a painter you truly are",
-            {
-              x: getClippyMaxMovement(80, "width"),
-              y: getClippyMaxMovement(80, "height"),
-            }
+            windowSize.width < 500
+              ? {
+                  x: getClippyMaxMovement(2, "width"),
+                  y: getClippyMaxMovement(80, "height"),
+                }
+              : {
+                  x: getClippyMaxMovement(80, "width"),
+                  y: getClippyMaxMovement(80, "height"),
+                }
           );
           dispatch(
             openWindow({
@@ -308,7 +319,14 @@ export default function Home() {
     }
 
     return options;
-  }, [clippyHidden, dispatch, clippyExplain, getClippyMaxMovement, clippy]);
+  }, [
+    clippyHidden,
+    dispatch,
+    clippyExplain,
+    getClippyMaxMovement,
+    windowSize.width,
+    clippy,
+  ]);
 
   return (
     <div ref={mainContainerRef}>
@@ -399,10 +417,15 @@ export default function Home() {
                 clippyExplain(
                   "paint",
                   "Let's see how talented of a painter you trully are",
-                  {
-                    x: getClippyMaxMovement(80, "width"),
-                    y: getClippyMaxMovement(80, "height"),
-                  }
+                  windowSize.width < 500
+                    ? {
+                        x: getClippyMaxMovement(2, "width"),
+                        y: getClippyMaxMovement(80, "height"),
+                      }
+                    : {
+                        x: getClippyMaxMovement(80, "width"),
+                        y: getClippyMaxMovement(80, "height"),
+                      }
                 );
                 dispatch(
                   openWindow({

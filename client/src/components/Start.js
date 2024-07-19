@@ -28,7 +28,7 @@ export function Start() {
   function cargando() {
     setCarga(true);
     setTimeout(() => {
-      history.push("/Deskop");
+      history.push("/Desktop");
     }, 1000);
   }
 

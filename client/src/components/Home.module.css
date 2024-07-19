@@ -40,13 +40,11 @@
   --tw-gradient-from: #2563eb;
   --tw-gradient-stops: var(--tw-gradient-from),
     var(--tw-gradient-to, rgba(37, 99, 235, 0));
-
   height: 30px;
   width: 100%;
   display: flex;
   flex-grow: 1;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .homeButton {
@@ -59,11 +57,12 @@
 }
 
 .statusBar {
-  flex-grow: 1;
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   border-top: 2px solid rgba(59, 130, 246, 1);
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  width: calc(100% - 197px);
 }
 
 .statusBar > div {
@@ -101,24 +100,6 @@
   width: 16px;
 }
 
-.singleIconClick {
-  all: unset;
-  padding: 10px 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 1px solid transparent;
-  cursor: pointer;
-  user-select: none;
-}
-
-.singleIconClick:active,
-.singleIconClick:focus-within {
-  background-color: rgba(96, 165, 250, 0.5);
-  border: 1px solid rgba(96, 165, 250, 1);
-}
-
 .icons a div {
   font-size: 16px;
   text-shadow: 0 0 3px black;
@@ -133,10 +114,12 @@
   text-align: left;
   background-color: rgba(96, 165, 250, 1);
   border-top: 3px solid rgba(147, 197, 253, 1);
-  width: 185px;
+  max-width: 185px;
+  min-width: 24px;
   padding-right: 8px;
   border-radius: 0.25rem;
   color: white;
+  flex: 1;
 }
 
 .windowBar > p {
@@ -154,8 +137,4 @@
 .windowBar.notFocused {
   background-color: rgba(29, 78, 216, 1);
   border-top: 3px solid rgba(29, 78, 216, 1);
-}
-
-.hidden {
-  display: none;
 }

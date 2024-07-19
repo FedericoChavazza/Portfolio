@@ -19,7 +19,7 @@ function App() {
       onClick={onClick}
       className={!grayscale ? styles.header : styles.grayHeader}
     >
-      <Route exact path="/Deskop" component={HomeWrapper} />
+      <Route exact path="/Desktop" component={HomeWrapper} />
       <Route exact path="/" component={Start} />
       <Route exact path="/turnedOff" component={TurnOffComputer} />
     </div>

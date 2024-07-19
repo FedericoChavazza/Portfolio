@@ -4,20 +4,19 @@ export const useHour = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const updateHour = () => {
       setTime(new Date());
-    }, 60000 - (Date.now() % 60000));
+    };
 
-    return () => clearTimeout(timer);
+    const intervalId = setInterval(updateHour, 60000);
+
+    updateHour();
+
+    return () => clearInterval(intervalId);
   }, []);
 
-  return `${
-    time.getHours().toString().length === 1
-      ? "0" + time.getHours()
-      : time.getHours()
-  }:${
-    time.getMinutes().toString().length === 1
-      ? "0" + time.getMinutes()
-      : time.getMinutes()
-  }`;
+  const hours = time.getHours().toString().padStart(2, "0");
+  const minutes = time.getMinutes().toString().padStart(2, "0");
+
+  return `${hours}:${minutes}`;
 };

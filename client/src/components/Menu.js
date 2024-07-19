@@ -4,7 +4,7 @@ import styles from "./Menu.module.css";
 import { CloseByMenu } from "./CloseByMenu";
 import { useDispatch } from "react-redux";
 import { grayscale } from "../actions/actions";
-import { openWindow } from "../actions/actions";
+import { openWindow, resetState } from "../actions/actions";
 import useSound from "use-sound";
 import clickOff from "./../sounds/windows_log_off.mp3";
 import { menuCondition } from "../actions/actions";
@@ -69,6 +69,7 @@ export function Menu({ setOpenMenu }) {
           onClick={(e) => {
             returnStart(e);
             logOffSound();
+            dispatch(resetState());
           }}
         >
           <button>

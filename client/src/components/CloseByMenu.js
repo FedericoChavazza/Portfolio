@@ -1,7 +1,7 @@
 import Modal from "react-modal";
 import styles from "./CloseByMenu.module.css";
 import { useDispatch } from "react-redux";
-import { grayscale, windowActionClose } from "../actions/actions";
+import { grayscale, resetState, windowActionClose } from "../actions/actions";
 
 import { useHistory } from "react-router";
 import { turnedOffScreen, shuttingDownSound } from "../actions/actions";
@@ -44,6 +44,7 @@ export function CloseByMenu({ setTurnOffOption }) {
 
   const triggerClippy = () => {
     clippy.stopCurrent();
+    clippy.stop();
     clippy.hide();
   };
 
@@ -54,6 +55,7 @@ export function CloseByMenu({ setTurnOffOption }) {
   }
 
   function turnOffComputer() {
+    triggerClippy();
     dispatch(turnedOffScreen(true));
     dispatch(grayscale(false));
     dispatch(shuttingDownSound(true));
@@ -62,10 +64,12 @@ export function CloseByMenu({ setTurnOffOption }) {
     setTimeout(() => {
       dispatch(turnedOffScreen(false));
       history.push("/turnedOff");
+      dispatch(resetState());
     }, 4000);
   }
 
   function resetComputer() {
+    triggerClippy();
     dispatch(turnedOffScreen(true));
     dispatch(grayscale(false));
     dispatch(shuttingDownSound(true));
@@ -74,7 +78,13 @@ export function CloseByMenu({ setTurnOffOption }) {
     setTimeout(() => {
       dispatch(turnedOffScreen(false));
       history.push("/");
+      dispatch(resetState());
     }, 4000);
+  }
+
+  function resetToNormalState() {
+    dispatch(grayscale(false));
+    clippy.show();
   }
 
   return (
@@ -84,6 +94,7 @@ export function CloseByMenu({ setTurnOffOption }) {
         closeTimeoutMS={500}
         style={customStyles}
         isOpen={true}
+        onAfterClose={resetToNormalState}
       >
         <div className={styles.franja1}>
           <div>Turn off computer</div>

@@ -80,3 +80,9 @@ export function shuttingDownSound(boolean) {
     type: "SHUTTING_DOWN_SOUND",
   };
 }
+
+export function resetState() {
+  return {
+    type: "RESET_STATE",
+  };
+}

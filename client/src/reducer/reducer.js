@@ -16,6 +16,13 @@ const reducer = (state = initialState, action) => {
   const lastId = state.data[state.data.length - 1]?.id + 1 || 1;
 
   switch (action.type) {
+    case "RESET_STATE": {
+      return {
+        ...state,
+        data: initialState.data,
+      };
+    }
+
     case "OPEN_WINDOW": {
       if (state.data.length) {
         return {
@@ -126,11 +133,5 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
-
-/* 
-  [ 
-    { id: 1, windowTitle: "My projects", isFocused: true, img: "https://", isMinimized: false }
-  ]
-*/
 
 export default reducer;
