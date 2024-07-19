@@ -7,6 +7,7 @@ import { useHistory } from "react-router";
 import { turnedOffScreen, shuttingDownSound } from "../actions/actions";
 import useSound from "use-sound";
 import soundTest from "./../sounds/windows_shutting_down.mp3";
+import { useClippy } from "@react95/clippy";
 
 const customStyles = {
   content: {
@@ -34,14 +35,22 @@ const customStyles = {
 };
 
 export function CloseByMenu({ setTurnOffOption }) {
+  const { clippy } = useClippy();
+
   const dispatch = useDispatch();
 
   const [soundData] = useSound(soundTest);
   const history = useHistory();
 
+  const triggerClippy = () => {
+    clippy.stopCurrent();
+    clippy.hide();
+  };
+
   function close() {
     setTurnOffOption(false);
     dispatch(grayscale(false));
+    clippy.show();
   }
 
   function turnOffComputer() {
@@ -70,7 +79,12 @@ export function CloseByMenu({ setTurnOffOption }) {
 
   return (
     <div>
-      <Modal closeTimeoutMS={500} style={customStyles} isOpen={true}>
+      <Modal
+        onAfterOpen={triggerClippy}
+        closeTimeoutMS={500}
+        style={customStyles}
+        isOpen={true}
+      >
         <div className={styles.franja1}>
           <div>Turn off computer</div>
           <img src="https://i.imgur.com/OtfzGgx.jpg" alt="" />

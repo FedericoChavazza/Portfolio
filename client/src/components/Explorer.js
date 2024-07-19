@@ -18,14 +18,36 @@ const archives = [
   },
   {
     img: "https://i.imgur.com/4sQ8mdp.png",
-    name: "Grocially.co.txt",
+    name: "My Game.txt",
     content: {
-      title: "Grocially.co",
+      title: "My Game",
       renderImg: "",
-      text: "A story generator created by AI. If you fill out some of the form fields, a spaceship will take off. The loading screen will display the generated AI story once it has loaded",
-      link: "https://app.grocially.co/",
-      techStack: ["NextJS", "Typescript", "Ruby on Rails"],
-      gitCode: null,
+      text: "It is a 3D game created with react-three-fiber where you control a rectangle shaped like a hopscotch box. The more jumps you make, the faster the rectangle spins.",
+      link: "https://codesandbox.io/p/sandbox/testing1-4wxcy5?file=%2Fsrc%2Findex.tsx",
+      techStack: ["React", "@react-three/drei"],
+      gitCode:
+        "https://codesandbox.io/p/sandbox/testing1-4wxcy5?file=%2Fsrc%2Fcomponents%2FCube.tsx%3A3%2C43-3%2C60",
+    },
+  },
+  {
+    img: "https://i.imgur.com/4sQ8mdp.png",
+    name: "Scrum.io.txt",
+    content: {
+      title: "Scrum.io",
+      renderImg:
+        "https://portfolio-lamaolo.vercel.app/_next/image?url=%2Fscrum-io%2Fscrum-io-1.JPG&w=1920&q=75",
+      text: "Scrum.io was developed by a team of 7 people, It was the Henry's FullStack bootcamp last project. Scrum.io is a SCRUM management system, designed to provide a set of tools for both SCRUM masters and developers. Including many features like getting the information of every developer performance in a chart, notifications, a chat and changes in real time, an interactive poker planning with rooms. In this project i worked in both front and backend, doing too some real-time features.",
+      link: "https://scrum-io.vercel.app",
+      techStack: [
+        "React",
+        "Socket.io",
+        "MongoDB",
+        "ExpressJS",
+        "NodeJS",
+        "Socket.io",
+        "Redux",
+      ],
+      gitCode: "https://github.com/SHIMER-jpg/Scrum.io/",
     },
   },
   {

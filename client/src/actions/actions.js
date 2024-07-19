@@ -19,6 +19,19 @@ export function closeWindow(id) {
   };
 }
 
+export function clippyExplained(name) {
+  return {
+    payload: name,
+    type: "CLIPPY_EXPLANATION",
+  };
+}
+
+export function resetClippyExplained() {
+  return {
+    type: "CLIPPY_RESET_EXPLANATION",
+  };
+}
+
 export function focusWindow(id) {
   return {
     payload: id,

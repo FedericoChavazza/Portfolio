@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import Explorer from "./Explorer";
 import Notepad from "./Notepad";
 import Paint from "./Paint";
+import { useClippy } from "@react95/clippy";
 
 export const FolderView = ({
   id,
@@ -20,13 +21,18 @@ export const FolderView = ({
   isMotoG4,
 }) => {
   const dispatch = useDispatch();
+
+  const { clippy } = useClippy();
   const [position, setPosition] = useState(false);
   const isIpad = window.matchMedia("(max-width: 900px)").matches;
 
   const [isMaximized, setIsMaximized] = useState(isIpad);
 
   const handleCloseWindows = () => {
-    dispatch(closeWindow(id));
+    if (clippy) {
+      dispatch(closeWindow(id));
+      clippy.stop();
+    }
   };
 
   const handleClick = () => {
@@ -191,6 +197,7 @@ export const FolderView = ({
         )}
         {kind === "explorer" && <Explorer isMotoG4={isMotoG4} />}
         {kind === "notepad" && <Notepad />}
+        {kind === "emptyNotepad" && <Notepad empty />}
         {kind === "project" && <Notepad content={content} />}
         {kind === "paint" && <Paint />}
       </div>

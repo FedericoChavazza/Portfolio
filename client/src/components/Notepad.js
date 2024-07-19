@@ -2,7 +2,15 @@ import styles from "./Notepad.module.css";
 
 import MyCV from "./../cv/Federico_Martin_Chavazza.pdf";
 
-const Notepad = ({ content }) => {
+const Notepad = ({ content, empty }) => {
+  if (empty) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.content} contentEditable={true}></div>
+      </div>
+    );
+  }
+
   if (!content) {
     return (
       <div className={styles.container}>
@@ -14,7 +22,11 @@ const Notepad = ({ content }) => {
             was. Once I discovered them, my true passion for web design and
             learning new technologies began! I mainly work as a React frontend
             developer (which I love). I have a keen eye for detail and
-            usability, and my work is standards-compliant and accessible.
+            usability, and my work is standards-compliant and accessible. <br />
+            <br />
+            What I enjoy about working with Agile methodologies and frameworks
+            like Scrum is that we can receive feedback quickly from clients,
+            enabling us to achieve better and more detailed results promptly.
           </p>
           <div className={styles.myInfo}>
             <a

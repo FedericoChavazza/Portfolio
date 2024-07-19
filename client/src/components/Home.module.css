@@ -10,6 +10,7 @@
   background-image: url("https://i.imgur.com/da4HY4P.jpg");
   background-size: cover;
   overflow: hidden;
+  user-select: none;
 }
 
 .icons {
@@ -40,10 +41,6 @@
   --tw-gradient-stops: var(--tw-gradient-from),
     var(--tw-gradient-to, rgba(37, 99, 235, 0));
 
-  /*
-    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-    border-top: 2px solid rgba(59, 130, 246, 1);
-  */
   height: 30px;
   width: 100%;
   display: flex;

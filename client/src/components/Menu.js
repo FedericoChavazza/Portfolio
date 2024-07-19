@@ -25,7 +25,7 @@ import RUN_IMAGE from "./../Images/Run_2001.webp";
 // ⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙
 // ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣
 
-export function Menu({ openMenu, setOpenMenu }) {
+export function Menu({ setOpenMenu }) {
   const history = useHistory();
 
   const dispatch = useDispatch();
@@ -33,7 +33,6 @@ export function Menu({ openMenu, setOpenMenu }) {
   function returnStart(e) {
     e.preventDefault();
     history.push("/");
-    console.log("me tocaron aca");
   }
 
   const [logOffSound] = useSound(clickOff);

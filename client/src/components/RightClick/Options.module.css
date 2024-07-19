@@ -1,0 +1,38 @@
+.clippyOptions {
+  list-style-type: none;
+  cursor: pointer;
+  width: 250px;
+  padding: 2px;
+  position: absolute;
+  z-index: 100000;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 750px) {
+  .clippyOptions {
+    width: 150px;
+  }
+}
+
+.clippyOptions li {
+  width: 100%;
+  height: 100%;
+  padding: 3px 20px;
+}
+
+.clippyOptions li:hover {
+  background-color: rgba(37, 99, 235, 1);
+  color: white;
+}
+
+.disabled {
+  color: rgb(193, 193, 193);
+  cursor: auto;
+}
+
+.clippyOptions .disabled:hover {
+  color: rgb(154, 154, 154);
+}

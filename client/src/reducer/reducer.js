@@ -5,6 +5,11 @@ const initialState = {
   windowsAction: "",
   menuCondition: false,
   shuttingDown: false,
+  clippyExplained: {
+    folder: false,
+    aboutMe: false,
+    paint: false,
+  },
 };
 
 const reducer = (state = initialState, action) => {
@@ -32,13 +37,28 @@ const reducer = (state = initialState, action) => {
         (element) => element.id !== action.payload
       );
 
-      // newData[newData?.length - 1]?.isFocused = true;
-
       return {
         ...state,
         data: newData,
       };
     }
+    case "CLIPPY_EXPLANATION": {
+      return {
+        ...state,
+        clippyExplained: {
+          ...state.clippyExplained,
+          [action.payload]: true,
+        },
+      };
+    }
+
+    case "CLIPPY_RESET_EXPLANATION": {
+      return {
+        ...state,
+        clippyExplained: initialState.clippyExplained,
+      };
+    }
+
     case "FOCUS_WINDOW": {
       return {
         ...state,
